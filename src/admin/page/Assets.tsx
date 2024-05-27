@@ -47,7 +47,7 @@ const Assets: React.FC<IProps> = (props) => {
       <Row gutter={[16, 16]}>
         {data?.map((it, index) => {
           return (
-            <Col xs={12} sm={8} md={4}>
+            <Col xs={12} sm={8} md={4} key={`asset-${index}`}>
               <Card
                 onClick={() => {
                   if (props.selectable) {
