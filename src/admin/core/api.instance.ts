@@ -1,11 +1,11 @@
 import axios from "axios";
 
 const Api = axios.create({
-  baseURL: "http://localhost:6856",
+  baseURL: import.meta.env.VITE_API_BASE_URL,
 });
 
 const ApiFormData = axios.create({
-  baseURL: "http://localhost:6856",
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   headers: { "Content-Type": "multipart/form-data" },
 });
 
