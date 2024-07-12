@@ -5,7 +5,14 @@ import DataTable from "../components/data/DataTable";
 import { motion } from "framer-motion";
 import AddData from "./AddData";
 
-type DataType = "home" | "about" | "service" | "portfolia" | "other" | "mail";
+type DataType =
+  | "home"
+  | "about"
+  | "service"
+  | "portfolia"
+  | "other"
+  | "mail"
+  | "contact";
 
 interface IProps {
   type: DataType;

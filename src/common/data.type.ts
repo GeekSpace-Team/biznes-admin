@@ -11,4 +11,5 @@ export enum DataType {
   SITE_MUSIC = "site_music",
   SERVICE_TITLE = "service_title",
   SERVICE_ITEM = "service_item",
+  CONTACT_THEME = "contact_theme",
 }

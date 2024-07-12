@@ -7,6 +7,7 @@ import {
   CustomerServiceOutlined,
   BookOutlined,
   SettingOutlined,
+  SendOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Layout, Menu, Typography, theme } from "antd";
@@ -44,6 +45,11 @@ const items: MenuProps["items"] = [
     key: "portfolia",
     icon: React.createElement(BookOutlined),
     label: `Portfolia`,
+  },
+  {
+    key: "contact",
+    icon: React.createElement(SendOutlined),
+    label: `Kontakt temasy`,
   },
   {
     key: "other",

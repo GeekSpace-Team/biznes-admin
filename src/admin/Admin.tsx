@@ -29,6 +29,10 @@ const Admin = () => {
             element={<Data type="portfolia" title="Portfolia" />}
           />
           <Route
+            path="contact"
+            element={<Data type="contact" title="Kontakt temasy" />}
+          />
+          <Route
             path="other"
             element={<Data type="other" title="Sazlamalar" />}
           />
