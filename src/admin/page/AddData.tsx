@@ -17,6 +17,7 @@ interface IProps {
   open: boolean;
   onClose: () => void;
   data?: DataModel;
+  fullData?: DataModel;
   type: DataFrom;
 }
 
@@ -141,6 +142,18 @@ const AddData: React.FC<IProps> = (props) => {
             {Object.values(DataType).map((it) => {
               return <Select.Option value={it}>{it}</Select.Option>;
             })}
+          </Select>
+        </Form.Item>
+
+        <Form.Item<FieldType> label="Service slide" name={"parentId"}>
+          <Select defaultValue={props.data?.parentId}>
+            {props
+              .fullData!.filter((it) => it.type.includes("service_slide"))
+              .map((it) => {
+                return (
+                  <Select.Option value={it.id}>{it.title_tm}</Select.Option>
+                );
+              })}
           </Select>
         </Form.Item>
 

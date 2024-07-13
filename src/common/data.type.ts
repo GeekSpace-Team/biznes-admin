@@ -12,4 +12,5 @@ export enum DataType {
   SERVICE_TITLE = "service_title",
   SERVICE_ITEM = "service_item",
   CONTACT_THEME = "contact_theme",
+  SERVICE_SLIDE = "service_slide",
 }

@@ -7,6 +7,7 @@ import AddData from "../../page/AddData";
 
 interface IProps {
   data: DataModel[];
+  fullData: DataModel[];
 }
 const DataTable: React.FC<IProps> = (props) => {
   const deleteData = useDeleteData();
@@ -65,6 +66,7 @@ const DataTable: React.FC<IProps> = (props) => {
         type="edit"
         open={openEdit}
         data={selected}
+        fullData={props.fullData}
         key={selected?.id.toString()}
         onClose={() => {
           setOpenEdit(false);

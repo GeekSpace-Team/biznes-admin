@@ -46,10 +46,14 @@ const Data: React.FC<IProps> = (props) => {
           Täze goşmak
         </Button>
       </Row>
-      <DataTable data={data!.filter((it) => it.type.includes(props.type))} />
+      <DataTable
+        data={data!.filter((it) => it.type.includes(props.type))}
+        fullData={data}
+      />
       <AddData
         type="add"
         open={openAdd}
+        fullData={data}
         onClose={() => {
           setOpenAdd(false);
         }}

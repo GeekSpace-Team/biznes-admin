@@ -25,6 +25,10 @@ const Admin = () => {
             element={<Data type="service" title="Biziň hyzmatlarymyz" />}
           />
           <Route
+            path="service_item"
+            element={<Data type="service_item" title="Hyzmatlarymyz Kardlar" />}
+          />
+          <Route
             path="portfolia"
             element={<Data type="portfolia" title="Portfolia" />}
           />

@@ -39,5 +39,6 @@ export interface AddData {
   type: string;
   order: number;
   url: string;
-  assetId?: number;
+  assetId?: number | undefined;
+  parentId?: number | undefined;
 }

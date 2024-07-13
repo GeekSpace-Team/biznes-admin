@@ -39,7 +39,12 @@ const items: MenuProps["items"] = [
   {
     key: "service",
     icon: React.createElement(CustomerServiceOutlined),
-    label: `Hyzmatlarymyz`,
+    label: `Hyzmatlarymyz Slidelar`,
+  },
+  {
+    key: "service_item",
+    icon: React.createElement(CustomerServiceOutlined),
+    label: `Hyzmatlarymyz Kardlar`,
   },
   {
     key: "portfolia",
