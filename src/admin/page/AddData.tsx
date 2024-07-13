@@ -17,7 +17,7 @@ interface IProps {
   open: boolean;
   onClose: () => void;
   data?: DataModel;
-  fullData?: DataModel;
+  fullData?: DataModel[];
   type: DataFrom;
 }
 

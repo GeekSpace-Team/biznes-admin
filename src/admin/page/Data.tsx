@@ -12,7 +12,8 @@ type DataType =
   | "portfolia"
   | "other"
   | "mail"
-  | "contact";
+  | "contact"
+  | "service_item";
 
 interface IProps {
   type: DataType;

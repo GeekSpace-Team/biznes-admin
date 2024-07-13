@@ -7,7 +7,7 @@ import AddData from "../../page/AddData";
 
 interface IProps {
   data: DataModel[];
-  fullData: DataModel[];
+  fullData: DataModel[] | undefined;
 }
 const DataTable: React.FC<IProps> = (props) => {
   const deleteData = useDeleteData();

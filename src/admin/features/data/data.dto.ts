@@ -13,6 +13,7 @@ export interface DataModel {
   order: number;
   url: string;
   assetId: number;
+  parentId: number;
   created_at: Date;
   updated_at: Date;
   asset: Asset;
