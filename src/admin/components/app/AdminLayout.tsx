@@ -8,6 +8,7 @@ import {
   BookOutlined,
   SettingOutlined,
   SendOutlined,
+  LogoutOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Layout, Menu, Typography, theme } from "antd";
@@ -15,59 +16,79 @@ import { Outlet, useNavigate } from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const items: MenuProps["items"] = [
-  {
-    key: "/admin/manager",
-    icon: React.createElement(DashboardOutlined),
-    label: `Dolandyryş panely`,
-  },
-  {
-    key: "file",
-    icon: React.createElement(FileImageOutlined),
-    label: `Saýt faýllary`,
-  },
-  {
-    key: "home",
-    icon: React.createElement(HomeOutlined),
-    label: `Baş sahypa`,
-  },
-  {
-    key: "about",
-    icon: React.createElement(InfoCircleOutlined),
-    label: `Biz barada`,
-  },
-  {
-    key: "service",
-    icon: React.createElement(CustomerServiceOutlined),
-    label: `Hyzmat Slidelar`,
-  },
-  {
-    key: "service_item",
-    icon: React.createElement(CustomerServiceOutlined),
-    label: `Hyzmat Kardlar`,
-  },
-  {
-    key: "portfolia",
-    icon: React.createElement(BookOutlined),
-    label: `Portfolia`,
-  },
-  {
-    key: "contact",
-    icon: React.createElement(SendOutlined),
-    label: `Kontakt temasy`,
-  },
-  {
-    key: "other",
-    icon: React.createElement(SettingOutlined),
-    label: `Sazlamalar`,
-  },
-];
-
 const AdminLayout: React.FC = () => {
   const navigate = useNavigate();
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
+
+  const handleLogout = () => {
+    // Clear local storage
+    localStorage.clear();
+    // Navigate to the login page
+    navigate("/");
+  };
+
+  const handleMenuSelect = (e: { key: string }) => {
+    if (e.key === "logout") {
+      handleLogout();
+    } else {
+      navigate(e.key);
+    }
+  };
+
+  const items: MenuProps["items"] = [
+    {
+      key: "/admin/manager",
+      icon: React.createElement(DashboardOutlined),
+      label: `Dolandyryş panely`,
+    },
+    {
+      key: "file",
+      icon: React.createElement(FileImageOutlined),
+      label: `Saýt faýllary`,
+    },
+    {
+      key: "home",
+      icon: React.createElement(HomeOutlined),
+      label: `Baş sahypa`,
+    },
+    {
+      key: "about",
+      icon: React.createElement(InfoCircleOutlined),
+      label: `Biz barada`,
+    },
+    {
+      key: "service",
+      icon: React.createElement(CustomerServiceOutlined),
+      label: `Hyzmat Slidelar`,
+    },
+    {
+      key: "service_item",
+      icon: React.createElement(CustomerServiceOutlined),
+      label: `Hyzmat Kardlar`,
+    },
+    {
+      key: "portfolia",
+      icon: React.createElement(BookOutlined),
+      label: `Portfolia`,
+    },
+    {
+      key: "contact",
+      icon: React.createElement(SendOutlined),
+      label: `Kontakt temasy`,
+    },
+    {
+      key: "other",
+      icon: React.createElement(SettingOutlined),
+      label: `Sazlamalar`,
+    },
+    {
+      key: "logout",
+      icon: React.createElement(LogoutOutlined),
+      label: `Log Out`,
+    },
+  ];
 
   return (
     <Layout hasSider>
@@ -113,9 +134,7 @@ const AdminLayout: React.FC = () => {
           mode="inline"
           defaultSelectedKeys={["/admin/manager"]}
           items={items}
-          onSelect={(e) => {
-            navigate(e.key);
-          }}
+          onClick={handleMenuSelect}
         />
       </Sider>
       <Layout style={{ marginLeft: 200 }}>
