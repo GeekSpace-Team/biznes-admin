@@ -1,11 +1,14 @@
 import axios from "axios";
 
+// Define the base URL directly
+const BASE_URL = "http://216.250.13.150:6856";
+
 const Api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: BASE_URL,
 });
 
 const ApiFormData = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: BASE_URL,
   headers: { "Content-Type": "multipart/form-data" },
 });
 
