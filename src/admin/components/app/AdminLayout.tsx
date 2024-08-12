@@ -151,8 +151,21 @@ const AdminLayout: React.FC = () => {
             <Outlet />
           </div>
         </Content>
-        <Footer style={{ textAlign: "center" }}>
-          @shageldi-dev ©{new Date().getFullYear()}
+        <Footer
+          style={{
+            textAlign: "center",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "10px", // Adjust gap as needed
+          }}
+        >
+          <img
+            src="/images/GeekSpaceLogo.svg"
+            style={{ height: "50px" }}
+            alt="GeekSpace Logo"
+          />
+          <span>©{new Date().getFullYear()}</span>
         </Footer>
       </Layout>
     </Layout>
