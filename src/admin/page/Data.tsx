@@ -13,6 +13,7 @@ type DataType =
   | "other"
   | "mail"
   | "contact"
+  | "social_media"
   | "service_item";
 
 interface IProps {
