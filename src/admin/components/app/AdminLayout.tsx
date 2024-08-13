@@ -84,6 +84,11 @@ const AdminLayout: React.FC = () => {
       label: `Sazlamalar`,
     },
     {
+      key: "social_media",
+      icon: React.createElement(SettingOutlined),
+      label: `Sosial ulgam`,
+    },
+    {
       key: "logout",
       icon: React.createElement(LogoutOutlined),
       label: `Log Out`,
